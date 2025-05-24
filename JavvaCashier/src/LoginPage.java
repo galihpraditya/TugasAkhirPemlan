@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -140,14 +143,41 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfUsernameActionPerformed
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        if(tfUsername.getText().equals("admin") && tfPassword.getText().equals("1234")){
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        if(tfUsername.getText().isEmpty()) 
+            JOptionPane.showMessageDialog(this, "Username tidak boleh kosong", "Message", JOptionPane.INFORMATION_MESSAGE);
+        else if(tfPassword.getText().isEmpty()) 
+            JOptionPane.showMessageDialog(this, "Password tidak boleh kosong", "Message", JOptionPane.INFORMATION_MESSAGE);
+
+        //login sementara
+        else if(tfUsername.getText().equals("admin") && tfPassword.getText().equals("1234")){
             AdminPage adminPage = new AdminPage();
             adminPage.setVisible(true);
             this.dispose();
         }
-        
-    }//GEN-LAST:event_btnLoginActionPerformed
+        else if(tfUsername.getText().equals("kasir") && tfPassword.getText().equals("1234")){
+            CashierPage kasirPage = new CashierPage();
+            kasirPage.setVisible(true);
+            this.dispose();
+        }
+
+        //bagian ini masih error karena belum ada data user yang disimpan
+        else if(CashierSystem.getUser(tfUsername.getText()) != null && CashierSystem.getUser(tfUsername.getText()).getPassword().equals(tfPassword.getText())){
+            if(CashierSystem.getUser(tfUsername.getText()).getRole().equals("admin")){
+                AdminPage adminPage = new AdminPage();
+                adminPage.setVisible(true);
+                this.dispose();
+            }
+            else if(CashierSystem.getUser(tfUsername.getText()).getRole().equals("kasir")){
+                CashierPage kasirPage = new CashierPage();
+                kasirPage.setVisible(true);
+                this.dispose();
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Username atau password salah", "Message", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 
     private void tfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPasswordActionPerformed
         // TODO add your handling code here:

@@ -11,14 +11,14 @@ import javax.swing.plaf.basic.BasicButtonUI;
  *
  * @author Galih
  */
-public class AdminPage extends javax.swing.JFrame {
+public class CashierPage extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminPage
      */
     
     CardLayout cardLayout;
-    public AdminPage() {
+    public CashierPage() {
         initComponents();
 
         btnHome.setUI(new BasicButtonUI());
@@ -53,6 +53,7 @@ public class AdminPage extends javax.swing.JFrame {
         pnlHome = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         pnlAturProduk = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -128,7 +129,7 @@ public class AdminPage extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Admin");
+        jLabel1.setText("Kasir");
 
         btnLogout.setBackground(new java.awt.Color(0, 0, 51));
         btnLogout.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -155,9 +156,9 @@ public class AdminPage extends javax.swing.JFrame {
                             .addComponent(btnHome)
                             .addComponent(btnLogout)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(79, 79, 79)
                         .addComponent(jLabel1)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,17 +206,26 @@ public class AdminPage extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("gw gatawu tampilannya");
+
         javax.swing.GroupLayout pnlHomeLayout = new javax.swing.GroupLayout(pnlHome);
         pnlHome.setLayout(pnlHomeLayout);
         pnlHomeLayout.setHorizontalGroup(
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlHomeLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jLabel17)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlHomeLayout.setVerticalGroup(
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHomeLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 443, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel17)
+                .addGap(0, 399, Short.MAX_VALUE))
         );
 
         pnlCards.add(pnlHome, "card3");
@@ -637,6 +647,7 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
